@@ -1,7 +1,7 @@
 import serial, time, urllib2
 
 #Connection to the USB
-arduino = serial.Serial('/dev/cu.usbmodem1411', 9600, timeout=.1)
+arduino = serial.Serial('/dev/cu.usbmodem1431', 9600, timeout=.1)
 time.sleep(1)
 
 statutTap = 0
@@ -14,6 +14,7 @@ while True:
     if data:
         #if data are send, we upload it to website
         response = urllib2.urlopen("http://localhost:8888/projet/api/uploadHumidity.php?humidity=" + str(data))
+        #print data
     else:
         #We check statut of the tap and if he need to be start
         response = urllib2.urlopen("http://localhost:8888/projet/api/getLimit.php")

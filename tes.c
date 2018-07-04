@@ -1,5 +1,6 @@
-const int relay = 10;  //Pin 10
+int relay = 10;  //Pin 10
 const int pinHumidity = A0;
+int LED = 13;
 
 int sensorValue = 0;
 int outputValue = 0;
